@@ -6,11 +6,16 @@
     --brand-hover: #1f2129;   
 }
 
+
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 100px; /* The Magic Bumper: Stops the scroll right below your glass navbar */
+}
+
 html, body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
-    scroll-behavior: smooth !important;
 }
 
 ::selection {
