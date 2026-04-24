@@ -435,14 +435,22 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
 /* =========================================
    RESPONSIVE SCALING (MOBILE, TABLET, 4K)
    ========================================= */
-
 /* --- MOBILE ONLY (Phones) --- */
 @media (max-width: 768px) {
     /* Layout & Text Polish */
     .masthead { 
-        min-height: 50vh; 
-        padding-top: 6rem !important;  
-        padding-bottom: 4rem !important; 
+        min-height: 40vh !important; /* Shorter header window so it's not "too big" */
+        padding-top: 5rem !important;  
+        padding-bottom: 3rem !important;
+        background-position: center 20% !important; /* Frames the house/ceiling better */
+    }
+    
+    .video-wrap {
+        height: 60vh !important; /* Home page intro is now shorter for better scrolling */
+    }
+
+    .bg-image {
+        background-position: center 20% !important;
     }
     
     h1 { font-size: calc(1.525rem + 3.3vw); }
@@ -518,17 +526,32 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     footer {
         padding-bottom: 4rem !important; 
     }
-    /* =========================================
-       HERO TYPOGRAPHY HIERARCHY FIX
-       ========================================= */
+
+    /* HERO TYPOGRAPHY HIERARCHY FIX */
     .video-wrap h2 {
-        font-size: 1.15rem !important; /* Shrinks it so the main title is the obvious star */
-        letter-spacing: 1px; /* Spreads the letters slightly for a high-end look */
-        opacity: 0.9; /* Softens it just a whisper */
-        margin-bottom: 2rem !important; /* Tightens up the gap before the buttons */
+        font-size: 1.15rem !important;
+        letter-spacing: 1px;
+        opacity: 0.9;
+        margin-bottom: 2rem !important;
+    }
+    /* =========================================
+       SLIM HERO BUTTONS (Mobile Only)
+       ========================================= */
+    .video-wrap .btn, 
+    .masthead .btn {
+        font-size: 0.85rem !important; /* Shrinks the text slightly */
+        padding: 8px 16px !important; /* Tightens the top/bottom bulk */
+        min-height: 42px !important;  /* Still big enough for a thumb, but much sleeker */
+        letter-spacing: 0.5px;
+        border-width: 1px !important; /* A thinner border looks more modern on small screens */
+    }
+
+    /* Tightens the gap so they don't sprawl across the whole photo */
+    .video-wrap .gap-3 {
+        gap: 0.6rem !important;
+        margin-bottom: 2rem !important; /* Creates space above the "Established" text */
     }
 }
-
 /* --- TABLET ONLY (iPads) --- */
 @media (min-width: 768px) and (max-width: 1024px) {
     h1 { font-size: 3.5rem !important; }
