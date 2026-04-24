@@ -9,7 +9,7 @@
 
 html {
     scroll-behavior: smooth !important;
-    scroll-padding-top: 100px; /* The Magic Bumper: Stops the scroll right below your glass navbar */
+    scroll-padding-top: 50px; /* The Magic Bumper: Stops the scroll right below your glass navbar */
 }
 
 html, body {
