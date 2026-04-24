@@ -431,50 +431,48 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
 }
-
 /* =========================================
    RESPONSIVE SCALING (MOBILE, TABLET, 4K)
    ========================================= */
+
 /* --- MOBILE ONLY (Phones) --- */
 @media (max-width: 768px) {
-    /* Layout & Text Polish */
-    /* =========================================
-   MOBILE HERO FIXES (SPACING & LAYOUT)
-   ========================================= */
-@media (max-width: 768px) {
-    /* 1. Prevents the text from hiding under the fixed glass navbar */
+    /* 1. Prevent navbar overlap */
     .masthead {
         padding-top: 100px !important; 
     }
     
+    /* 2. Shrink the main title so it doesn't break awkwardly */
     .masthead h1, 
     .masthead .display-3 {
         margin-top: 20px !important; 
+        font-size: 2.25rem !important; 
+        line-height: 1.2 !important;
+        padding: 0 15px; 
     }
 
-    /* 2. Adds breathing room around the stacked buttons */
+    /* 3. The "Bulletproof" Button Spacing (Using Flex Gap) */
+    .masthead .d-flex {
+        flex-wrap: wrap !important; 
+        gap: 15px !important; 
+        justify-content: center !important;
+    }
+
+    /* 4. Reset margins and standardize button padding */
     .masthead .btn, 
     .home-page .btn-outline-light {
-        margin-bottom: 15px !important; 
-        margin-left: 5px !important;    
-        margin-right: 5px !important;
-        padding: 10px 24px !important;  
+        margin: 0 !important; 
+        padding: 12px 24px !important;  
     }
     
-    /* 3. Spaces out the divider line */
+    /* 5. Space out the divider line */
     .masthead hr {
-        margin-top: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
-    }
-}
-    /* Pushes the "Established since 1886" text and line down slightly */
-    .masthead hr {
-        margin-top: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
     }
     
     .video-wrap {
-        height: 60vh !important; /* Home page intro is now shorter for better scrolling */
+        height: 60vh !important; 
     }
 
     .bg-image {
@@ -495,6 +493,7 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
         align-items: center;
         justify-content: center;
     }
+    
     .navbar-brand { font-size: 1.15rem !important; letter-spacing: 0.5px; }
     #contact input, #contact .form-control { min-height: 50px; font-size: 16px !important; }
 
@@ -524,7 +523,6 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
         margin-bottom: 0.25rem !important;
     }
 
-    #contact input, #contact .form-control,
     form input, form textarea {
         min-height: 50px;
         font-size: 16px !important; 
@@ -562,24 +560,23 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
         opacity: 0.9;
         margin-bottom: 2rem !important;
     }
-    /* =========================================
-       SLIM HERO BUTTONS (Mobile Only)
-       ========================================= */
-    .video-wrap .btn, 
+
+    /* SLIM HERO BUTTONS (Mobile Only) */
+    .video-wrap .btn,
     .masthead .btn {
-        font-size: 0.85rem !important; /* Shrinks the text slightly */
-        padding: 8px 16px !important; /* Tightens the top/bottom bulk */
-        min-height: 42px !important;  /* Still big enough for a thumb, but much sleeker */
+        font-size: 0.85rem !important; 
+        padding: 8px 16px !important; 
+        min-height: 42px !important;  
         letter-spacing: 0.5px;
-        border-width: 1px !important; /* A thinner border looks more modern on small screens */
+        border-width: 1px !important; 
     }
 
-    /* Tightens the gap so they don't sprawl across the whole photo */
     .video-wrap .gap-3 {
         gap: 0.6rem !important;
-        margin-bottom: 2rem !important; /* Creates space above the "Established" text */
+        margin-bottom: 2rem !important; 
     }
-}
+} /* <--- THE CRITICAL MISSING BRACKET */
+
 /* --- TABLET ONLY (iPads) --- */
 @media (min-width: 768px) and (max-width: 1024px) {
     h1 { font-size: 3.5rem !important; }
