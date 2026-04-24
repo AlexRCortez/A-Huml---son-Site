@@ -438,11 +438,39 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
 /* --- MOBILE ONLY (Phones) --- */
 @media (max-width: 768px) {
     /* Layout & Text Polish */
-    .masthead { 
-        min-height: 40vh !important; /* Shorter header window so it's not "too big" */
-        padding-top: 5rem !important;  
-        padding-bottom: 3rem !important;
-        background-position: center 20% !important; /* Frames the house/ceiling better */
+    /* =========================================
+   MOBILE HERO FIXES (SPACING & LAYOUT)
+   ========================================= */
+@media (max-width: 768px) {
+    /* 1. Prevents the text from hiding under the fixed glass navbar */
+    .masthead {
+        padding-top: 100px !important; 
+    }
+    
+    .masthead h1, 
+    .masthead .display-3 {
+        margin-top: 20px !important; 
+    }
+
+    /* 2. Adds breathing room around the stacked buttons */
+    .masthead .btn, 
+    .home-page .btn-outline-light {
+        margin-bottom: 15px !important; 
+        margin-left: 5px !important;    
+        margin-right: 5px !important;
+        padding: 10px 24px !important;  
+    }
+    
+    /* 3. Spaces out the divider line */
+    .masthead hr {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+    /* Pushes the "Established since 1886" text and line down slightly */
+    .masthead hr {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
     
     .video-wrap {
