@@ -150,7 +150,7 @@ html {
    ========================================= */
 .exterior-page .masthead {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                      url('../pages/imgs/Exterior/ext.\ white\ mansions.webp');
+                      url('/pages/imgs/Exterior/ext. white mansions.webp');;
     background-size: cover;
     background-position: center;
     min-height: 65vh;
@@ -161,7 +161,7 @@ html {
 
 .snow-page .masthead {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('../pages/imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
+                      url('/pages/imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
     background-size: cover;
     background-position: center;
     min-height: 60vh;
@@ -173,7 +173,7 @@ html {
 
 .about-page .masthead {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('../pages/imgs/logos/about-us-information-service-sharing-join-concept.webp'); 
+                      url('/pages/imgs/logos/about-us-information-service-sharing-join-concept.webp'); 
     background-size: cover;
     background-position: center;
     min-height: 40vh;
@@ -184,7 +184,7 @@ html {
 
 .interior-page .masthead {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('../pages/imgs/Interior/unpslashint2.webp');
+                      url('/pages/imgs/Interior/unpslashint2.webp');
     background-size: cover;
     background-position: center;
     min-height: 60vh;
@@ -195,7 +195,7 @@ html {
 
 .contact-page .masthead {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('../pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
+                      url('/pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
     background-size: cover;
     background-position: center;
     min-height: 40vh;
