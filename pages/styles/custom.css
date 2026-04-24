@@ -8,7 +8,14 @@
     /* A slightly brighter, vibrant version for button hovers */
     --brand-hover: #1f2129;   
 }
-
+/* =========================================
+   UNIVERSAL LAYOUT FIX (PREVENTS AOS SCROLL BUG)
+   ========================================= */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
 /* Branded Text Selection */
 ::selection {
     background-color: var(--brand-primary); 
