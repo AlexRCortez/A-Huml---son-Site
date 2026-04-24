@@ -91,16 +91,9 @@ h1 { font-size: 3rem; }
     font-weight: bold !important;
 }
 
-/* =========================================
-   MASTHEADS & HERO SECTIONS
-   ========================================= */
-/* Base Settings & Home Page Default (Restored) */
 .masthead {
-    /* Your original working image and height */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/Interior/unsplash3.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/unsplash3.webp');
     min-height: 75vh; 
-    
-    /* Restored layout */
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat;
@@ -114,30 +107,30 @@ h1 { font-size: 3rem; }
 }
 
 .exterior-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/pages/imgs/Exterior/ext. white mansions.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imgs/Exterior/ext. white mansions.webp');
     min-height: 60vh;
 }
 
 .snow-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
     min-height: 60vh;
 }
 
 .about-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/logos/about-us-information-service-sharing-join-concept.webp'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/logos/about-us-information-service-sharing-join-concept.webp'); 
     min-height: 60vh; 
 }
 
 .interior-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/Interior/unpslashint2.webp');
+    /* Double check the spelling of your image file here too! It was originally 'unpslashint2.webp' */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/unpslashint2.webp');
     min-height: 60vh;
 }
 
 .contact-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
     min-height: 60vh;
 }
-
 /* =========================================
    HOME PAGE HERO & VIDEO BACKGROUND SETUP
    ========================================= */
