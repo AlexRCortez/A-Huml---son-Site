@@ -112,7 +112,7 @@ h1 { font-size: 3rem; }
 }
 
 .snow-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
     min-height: 60vh;
 }
 
