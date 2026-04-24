@@ -431,48 +431,64 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
 }
+
 /* =========================================
    RESPONSIVE SCALING (MOBILE, TABLET, 4K)
    ========================================= */
 
 /* --- MOBILE ONLY (Phones) --- */
+/* =========================================
+   MOBILE HERO FIXES (TYPOGRAPHY & BUTTON SPACING)
+   ========================================= */
 @media (max-width: 768px) {
-    /* 1. Prevent navbar overlap */
-    .masthead {
-        padding-top: 100px !important; 
+    .home-page .masthead,
+    .video-wrap {
+        min-height: 100vh !important; /* vh = viewport height (screen size) */
+        height: 100vh !important;
+        
+        /* This is a modern trick for mobile browsers. 
+           It accounts for the address bar shrinking/growing! */
+        min-height: 100dvh !important; 
+        height: 100dvh !important;
     }
     
-    /* 2. Shrink the main title so it doesn't break awkwardly */
-    .masthead h1, 
+    /* 3. Keep the text scaled so it doesn't break awkwardly */
+    .masthead h1,
+    .video-wrap h1, 
     .masthead .display-3 {
-        margin-top: 20px !important; 
         font-size: 2.25rem !important; 
         line-height: 1.2 !important;
         padding: 0 15px; 
     }
 
-    /* 3. The "Bulletproof" Button Spacing (Using Flex Gap) */
-    .masthead .d-flex {
-        flex-wrap: wrap !important; 
-        gap: 15px !important; 
+    /* 4. THE BULLETPROOF BUTTON SPACING */
+    .masthead .d-flex,
+    .video-wrap .d-flex,
+    .video-wrap .gap-3 {
+        flex-wrap: wrap !important; /* Lets buttons drop to the next line */
+        gap: 15px !important; /* Forces a 15px wall between every button */
         justify-content: center !important;
+        margin-bottom: 1.5rem !important; /* Space above the "Established" text */
     }
 
-    /* 4. Reset margins and standardize button padding */
+    /* 5. Reset margins so the "gap" rule works perfectly */
     .masthead .btn, 
+    .video-wrap .btn,
     .home-page .btn-outline-light {
         margin: 0 !important; 
         padding: 12px 24px !important;  
+        min-height: 48px !important; /* Perfect thumb-tap size */
     }
     
-    /* 5. Space out the divider line */
-    .masthead hr {
-        margin-top: 2rem !important;
-        margin-bottom: 2rem !important;
+    /* 6. Space out the divider line */
+    .masthead hr,
+    .video-wrap hr {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
     }
-    
-    .video-wrap {
-        height: 60vh !important; 
+
+    .bg-image {
+        background-position: center 20% !important;
     }
 
     .bg-image {
