@@ -1,42 +1,48 @@
 /* =========================================
-   GLOBAL BRAND COLORS (THE MASTER SWITCH)
+   GLOBAL VARIABLES & BASE RESETS
    ========================================= */
 :root {
-    /* The official A. Huml & Son II LLC Navy Blue */
     --brand-primary: #474646; 
-    
-    /* A slightly brighter, vibrant version for button hovers */
     --brand-hover: #1f2129;   
 }
-/* =========================================
-   UNIVERSAL LAYOUT FIX (PREVENTS AOS SCROLL BUG)
-   ========================================= */
+
 html, body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
+    scroll-behavior: smooth !important;
 }
-/* Branded Text Selection */
+
 ::selection {
     background-color: var(--brand-primary); 
-    color: #ffffff; /* Swapped to white so it's readable against the dark blue */
+    color: #ffffff; 
 }
 ::-moz-selection { 
     background-color: var(--brand-primary);
     color: #ffffff;
 }
 
-
-
-/* Add this to the very top of your custom.css */
-html {
-    scroll-behavior: smooth !important;
+/* =========================================
+   GLOBAL TYPOGRAPHY
+   ========================================= */
+body, p, a, span, li, button, .btn {
+    font-family: 'Montserrat', sans-serif !important;
 }
+
+h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-brand {
+    font-family: 'Playfair Display', serif !important;
+}
+
+h1 { font-size: 3rem; }
+
+.darkBG {
+    background-color: #f8f9fa; 
+    color: #333; 
+}
+
 /* =========================================
    APPLE-STYLE SCROLLING NAVBAR
    ========================================= */
-
-/* State 1: At the very top (Totally Transparent) */
 .navbar {
     background: transparent !important;
     backdrop-filter: blur(0px);
@@ -45,9 +51,8 @@ html {
     transition: all 0.4s ease;
 }
 
-/* State 2: After scrolling (Apple Glass) */
 .navbar.scrolled {
-    background: rgba(15, 15, 15, 0.70) !important; /* Turns the nav dark! */
+    background: rgba(15, 15, 15, 0.70) !important; 
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -56,7 +61,6 @@ html {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* 2. The upgrade for modern phones (Frosted Glass) */
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     .navbar {
         background: rgba(20, 20, 20, 0.75) !important; 
@@ -64,45 +68,44 @@ html {
         -webkit-backdrop-filter: blur(16px) saturate(180%);
     }
 }
-/* =========================================
-   PREMIUM NAVBAR TEXT STYLING
-   ========================================= */
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
 .navbar-dark .navbar-nav .nav-link {
-    /* 1. Makes the font thicker (Montserrat 500 or 600 look best) */
     font-weight: 500 !important; 
-    
-    /* 2. Adds slightly more space between letters for a cleaner look */
     letter-spacing: 0.5px; 
-    
-    /* 3. Adds "Depth" by placing a very soft, dark shadow directly behind the text */
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
-    
-    /* Smooth transition for when you hover over them */
     transition: all 0.3s ease; 
 }
 
-/* Gives an extra little "pop" when you hover over the links */
 .navbar-dark .navbar-nav .nav-link:hover {
     text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
     color: #ffffff !important;
 }
 
-
+.navbar-dark .navbar-nav .nav-link.active {
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
 
 /* =========================================
-   GLOBAL HERO / MASTHEAD SETUP
+   MASTHEADS & HERO SECTIONS
    ========================================= */
+/* Base Settings & Home Page Default (Restored) */
 .masthead {
-    /* Path to your hero image */
+    /* Your original working image and height */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/Interior/unsplash3.webp');
+    min-height: 75vh; 
+    
+    /* Restored layout */
     background-size: cover;
-    background-position: center;
+    background-position: center; 
     background-repeat: no-repeat;
-    min-height: 70vh; /* Reduced from 95vh so the user sees content below faster */
     position: relative;
     color: white;
-    
-    /* These three lines center the text inside the hero image */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,19 +113,55 @@ html {
     text-align: center;
 }
 
+.exterior-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/pages/imgs/Exterior/ext. white mansions.webp');
+    min-height: 60vh;
+}
+
+.snow-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
+    min-height: 60vh;
+}
+
+.about-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/logos/about-us-information-service-sharing-join-concept.webp'); 
+    min-height: 60vh; 
+}
+
+.interior-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/Interior/unpslashint2.webp');
+    min-height: 60vh;
+}
+
+.contact-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
+    min-height: 60vh;
+}
+
 /* =========================================
    HOME PAGE HERO & VIDEO BACKGROUND SETUP
    ========================================= */
 .video-wrap {
     position: relative;
-    height: 100vh; /* Makes the hero section fill the entire screen */
+    height: 100vh; 
     width: 100%;
     overflow: hidden;
-    background-color: #000; /* Fallback color */
+    background-color: #000; 
 }
 
-/* Forces the video or image to fill the screen without stretching */
-.bg-image, .bg-video {
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 35%; 
+    z-index: 0;
+}
+
+/* Fallback for actual video tags if you ever use them */
+.bg-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -134,80 +173,35 @@ html {
     z-index: 0;
 }
 
-.bg-image {
-    background-size: cover;
-    background-position: center;
-}
-
-/* Pulls the text and buttons forward so they sit on top of the shade */
-.z-index-2 {
-    z-index: 2;
-}
-
-
-/* =========================================
-   PAGE-SPECIFIC MASTHEADS
-   ========================================= */
-.exterior-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                      url('/pages/imgs/Exterior/ext. white mansions.webp');;
-    background-size: cover;
-    background-position: center;
-    min-height: 65vh;
-    display: flex;
-    align-items: center;
-    color: white;
-}
-
-.snow-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/pages/imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
-    background-size: cover;
-    background-position: center;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-.about-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/pages/imgs/logos/about-us-information-service-sharing-join-concept.webp'); 
-    background-size: cover;
-    background-position: center;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.interior-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/pages/imgs/Interior/unpslashint2.webp');
-    background-size: cover;
-    background-position: center;
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    color: white;
-}
-
-.contact-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                      url('/pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
-    background-size: cover;
-    background-position: center;
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.z-index-2 { z-index: 2; }
+.color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.6);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
 }
 
 /* =========================================
-   GLOBAL COMPONENTS
+   UI COMPONENTS & BUTTONS
    ========================================= */
-/* Force the contact icons to stay small and perfectly circular */
+.btn-primary {
+    background-color: var(--brand-primary) !important;
+    border-color: var(--brand-primary) !important;
+    color: #ffffff !important; 
+    font-weight: bold;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important; 
+    background-color: var(--brand-hover) !important; 
+    color: #ffffff !important;
+}
+
 .icon-box {
     width: 40px !important;
     height: 40px !important;
@@ -216,7 +210,6 @@ html {
     background-color: #0d6efd; 
 }
 
-/* The Bulletproof Editorial Portrait */
 .profile-img {
     width: 100% !important;       
     max-width: 500px !important;  
@@ -229,55 +222,73 @@ html {
     display: block !important;
 }
 
-/* Contact Page Form Inputs */
+.badge.rounded-pill {
+    font-size: 0.9rem !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;     
+    padding: 10px 25px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.singleCol {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* =========================================
+   FORMS & CONTACT
+   ========================================= */
+.contact-info .fa { padding-right: 5px; }
+
+#contact .form-control, .contact-page form .form-control {
+    border: none;
+    border-bottom: 2px solid #f0f0f0;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: all ease-in-out 0.4s;
+}
+
 .contact-page form .form-control {
     border: 1px solid #dee2e6;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
 }
 
-.contact-page form .form-control:focus {
+#contact .form-control:focus, .contact-page form .form-control:focus {
     border-color: #debd00; 
     box-shadow: 0 0 0 0.25rem rgba(222, 189, 0, 0.25);
 }
 
-/* Primary Buttons */
-.btn-primary {
-    background-color: var(--brand-primary) !important;
-    border-color: var(--brand-primary) !important;
-    color: #ffffff !important; /* Swapped to white text for contrast */
-    font-weight: bold;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
+#contact input { height: 55px; }
+
+#contact button#submit {
+    background: #2b2b2b;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    height: 50px;
+    margin-top: 24px;
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important; 
-    background-color: var(--brand-hover) !important; 
-    color: #ffffff !important;
+#contact button#submit:hover {
+    background: #7682cc;
+    color: #ffffff;
 }
 
-.color-overlay{
-    position: absolute;
-    background-color: rgba(0,0,0,0.6);
-    height: 100%;
-    width: 100%;
-}
-
-h1{
-    font-size: 3rem;
-}
-
-.singleCol{
-    max-width: 750px;
-    margin: 0 auto;
-}
-
-.darkBG {
-    background-color: #f8f9fa; 
-    color: #333; 
-}
-
+/* =========================================
+   GALLERY & CAROUSEL
+   ========================================= */
 .carousel img {
     height: 500px; 
     width: 100%;   
@@ -285,60 +296,25 @@ h1{
     border-radius: 15px; 
 }
 
-@media (max-width: 768px){
-    .masthead{
-        min-height: 50vh; /* Fixed typo from hv to vh */
-    }
-    h1{
-        font-size: calc(1.525rem + 3.3vw);
-    }
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.4));
+    width: 2.5rem; 
+    height: 2.5rem;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27); 
 }
 
-.contact-info .fa {
-  padding-right: 5px;
-}
-  
-#contact .form-control {
-  border: none;
-  border-bottom: 2px solid #f0f0f0;
-  border-radius: 0px;
-  box-shadow: none;
-  font-size: 18px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  -webkit-transition: all ease-in-out 0.4s;
-  transition: all ease-in-out 0.4s;
-}
-  
-#contact .form-control:focus {
-  border-bottom-color: #999999;
-}
-  
-#contact input {
-  height: 55px;
-}
-  
-#contact button#submit {
-  background: #2b2b2b;
-  border: none;
-  border-radius: 50px;
-  color: #ffffff;
-  height: 50px;
-  margin-top: 24px;
-}
-  
-#contact button#submit:hover {
-  background: #7682cc;
-  color: #ffffff;
+.carousel-control-prev, .carousel-control-next {
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    background: transparent !important; 
 }
 
-.footerPA{
-  font-size: medium;
+.carousel-control-prev:hover, .carousel-control-next:hover { opacity: 1; }
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    transform: scale(1.25);
 }
- 
-/* =========================================
-   PREMIUM GALLERY STYLING & HOVER
-   ========================================= */
+
 .classic-gallery-item {
     position: relative;
     overflow: hidden; 
@@ -371,27 +347,20 @@ h1{
         transform: translateY(-6px); 
         box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important; 
     }
-    
     .classic-gallery-item:hover img {
         transform: scale(1.05); 
         filter: brightness(0.85);
     }
 }
 
-/* =========================================
-   GLIGHTBOX POPUP STYLING (SAFE VERSION)
-   ========================================= */
+.glightbox-container { z-index: 999999 !important; }
 .glightbox-container .goverlay {
   background: rgba(0, 0, 0, 0.5) !important; 
   backdrop-filter: blur(10px) !important; 
   -webkit-backdrop-filter: blur(10px) !important; 
 }
 
-.gslide-image {
-  background: transparent !important;
-  box-shadow: none !important; 
-}
-
+.gslide-image { background: transparent !important; box-shadow: none !important; }
 .gslide-image img {
   max-width: 80vw !important;
   max-height: 80vh !important;
@@ -399,57 +368,39 @@ h1{
   box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
 }
 
+.gclose, .gnext, .gprev { opacity: 1 !important; display: block !important; }
+.gclose svg path, .gnext svg path, .gprev svg path { fill: #ffffff !important; }
+
+/* 3. Removes the ugly dark shade and adds a premium drop-shadow instead */
+.gbtn {
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent !important; /* Kills the dark box */
+}
+
+/* 4. Adds a sleek shadow directly to the white arrows and X so they pop on bright photos */
+.gclose svg, .gnext svg, .gprev svg {
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.6)) !important;
+    transition: transform 0.2s ease;
+}
+
+/* 5. A subtle hover effect for the buttons */
+.gbtn:hover svg {
+    transform: scale(1.15);
+}
 /* =========================================
-   NAVIGATION & FOOTER
+   FOOTER & LOGOS
    ========================================= */
-.navbar-dark .navbar-nav .nav-link.active {
-  color: #ffffff !important;
-  font-weight: bold !important;
-}
-
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
+.footer-links li { margin-bottom: 0.5rem; }
 .footer-links a {
     color: rgba(255, 255, 255, 0.6); 
     text-decoration: none;
     transition: color 0.3s ease;
 }
+.footer-links a:hover { color: #debd00; }
+footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
+.footerPA{ font-size: medium; }
 
-.footer-links a:hover {
-    color: #debd00; 
-}
-
-footer h5 {
-    letter-spacing: 1px;
-    font-size: 1.1rem;
-}
-
-.badge.rounded-pill {
-    font-size: 0.9rem !important;
-    text-transform: uppercase;
-    letter-spacing: 2px;     
-    padding: 10px 25px !important;
-    font-weight: 700 !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-}
-
-/* =========================================
-   GLOBAL TYPOGRAPHY
-   ========================================= */
-body, p, a, span, li, button, .btn {
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-brand {
-    font-family: 'Playfair Display', serif !important;
-}
-
-/* =========================================
-   TRUSTED BRAND LOGOS
-   ========================================= */
 .brand-logo {
     max-height: 100px; 
     width: auto; 
@@ -457,10 +408,7 @@ h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-
     filter: grayscale(100%) opacity(80%); 
     transition: all 0.3s ease-in-out; 
 }
-
-.brand-logo:hover {
-    filter: grayscale(0%) opacity(100%); 
-}
+.brand-logo:hover { filter: grayscale(0%) opacity(100%); }
 
 .brand-logo-dark {
     max-height: 60px; 
@@ -469,164 +417,28 @@ h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-
     filter: brightness(0) invert(1) opacity(60%); 
     transition: all 0.3s ease-in-out; 
 }
+.brand-logo-dark:hover { filter: brightness(0) invert(1) opacity(100%); }
 
-.brand-logo-dark:hover {
-    filter: brightness(0) invert(1) opacity(100%); 
-}
 
 /* =========================================
-   UNIVERSAL POLISH CSS
+   RESPONSIVE SCALING (MOBILE, TABLET, 4K)
    ========================================= */
+
+/* --- MOBILE ONLY (Phones) --- */
 @media (max-width: 768px) {
-    .display-3 { font-size: 2.5rem !important; }
-    .display-5 { font-size: 2rem !important; }
-    .masthead { padding-top: 6rem !important; padding-bottom: 4rem !important; }
-}
-
-.navbar-brand {
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-.card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-}
-
-/* =========================================
-   PREMIUM CAROUSEL CONTROLS (MINIMALIST)
-   ========================================= */
-
-/* Ultra-soft, diffused shadow so the arrow is readable without looking heavy */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.4));
-    width: 2.5rem; 
-    height: 2.5rem;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27); /* Smooth, premium bounce */
-}
-
-/* Clean opacity fade, completely removing any boxy backgrounds */
-.carousel-control-prev,
-.carousel-control-next {
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    background: transparent !important; 
-}
-
-/* Full visibility on hover */
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-    opacity: 1;
-}
-
-/* Tactile 'Pop': The arrow itself slightly scales up when hovered */
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-    transform: scale(1.25);
-}
-/* =========================================
-   GLIGHTBOX UI FIX (ARROWS & X BUTTON)
-   ========================================= */
-
-/* 1. Force the controls to the very front of the screen */
-.glightbox-container {
-    z-index: 999999 !important;
-}
-
-/* 2. Ensure the X (Close) button is visible and white */
-.gclose, .gnext, .gprev {
-    opacity: 1 !important;
-    display: block !important;
-}
-
-.gclose svg path, 
-.gnext svg path, 
-.gprev svg path {
-    fill: #ffffff !important; /* Forces the icons to be white */
-}
-
-/* 3. Make sure the buttons aren't being 'clipped' by the screen edge */
-.gbtn {
-    min-width: 44px;
-    min-height: 44px;
-    background: rgba(0, 0, 0, 0.5) !important; /* Adds a soft dark circle behind arrows */
-    border-radius: 50%;
-}
-/* =========================================
-   TABLET OPTIMIZATIONS & SPACING (768px to 1024px)
-   ========================================= */
-@media (min-width: 768px) and (max-width: 1024px) {
-    /* 1. Prevents huge headlines from taking over the screen */
-    h1 {
-        font-size: 3.5rem !important;
+    /* Layout & Text Polish */
+    .masthead { 
+        min-height: 50vh; 
+        padding-top: 6rem !important;  
+        padding-bottom: 4rem !important; 
     }
     
-    h2 {
-        font-size: 2.5rem !important;
-    }
-
-    /* 2. Adjusts the masthead height for a better aspect ratio */
-    .masthead {
-        min-height: 50vh !important;
-    }
-
-    /* 3. Ensures the 3-column gallery doesn't get too skinny */
-    .col-md-4 {
-        width: 50% !important; 
-    }
-
-    /* --- THE NEW SPACIOUS TWEAKS --- */
-
-    /* 4. Pushes the edges out just a tiny bit more than phones */
-    .container {
-        padding-left: 32px !important;
-        padding-right: 32px !important;
-    }
-
-    /* 5. Gives the text a slightly more relaxed, airy feel */
-    p {
-        line-height: 1.7 !important;
-    }
-
-    /* 6. Adds a subtle amount of extra space between major sections */
-    section {
-        padding-top: 4.5rem !important;
-        padding-bottom: 4.5rem !important;
-    }
-}
-/* =========================================
-   LARGE MONITOR SCALING (2K & 4K DISPLAYS)
-   ========================================= */
-
-/* Default size for laptops and tablets is usually 16px */
-
-/* For 2K Monitors and standard desktops (1440px and wider) */
-@media (min-width: 1440px) {
-    html {
-        font-size: 18px !important; /* Bumps everything up by ~12.5% */
-    }
-}
-
-/* For massive 4K Monitors or Ultra-Wides (2560px and wider) */
-@media (min-width: 2560px) {
-    html {
-        font-size: 22px !important; /* Bumps everything up by ~37% */
-    }
-}/* =========================================
-   MOBILE UX & SPACIOUSNESS POLISH (Phones)
-   ========================================= */
-@media (max-width: 768px) {
-    /* 1. The "Spacious" Text Fix */
-    /* Increases the space between lines of text so it doesn't look like a dense wall */
-    p {
-        font-size: 1.05rem !important; /* Just a whisper larger */
-        line-height: 1.65 !important; 
-    }
-
-    /* 2. The Apple "Thumb Rule" (Tap Targets) */
-    /* Forces buttons to be at least 48px tall so they are effortless to tap with a thumb */
+    h1 { font-size: calc(1.525rem + 3.3vw); }
+    .display-3 { font-size: 2.5rem !important; }
+    .display-5 { font-size: 2rem !important; }
+    p { font-size: 1.05rem !important; line-height: 1.65 !important; }
+    
+    /* UX Touches */
     .btn {
         min-height: 48px; 
         padding-top: 12px !important;
@@ -635,18 +447,93 @@ h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-
         align-items: center;
         justify-content: center;
     }
+    .navbar-brand { font-size: 1.15rem !important; letter-spacing: 0.5px; }
+    #contact input, #contact .form-control { min-height: 50px; font-size: 16px !important; }
 
-    /* 3. Sharp Mobile Branding */
-    /* Prevents the business name from wrapping awkwardly on very skinny phones */
-    .navbar-brand {
-        font-size: 1.15rem !important; 
-        letter-spacing: 0.5px;
+    /* MOBILE FORM REFINEMENT */
+    .contact-page h2, 
+    h2.display-6, 
+    .text-center h2 {
+        font-size: 1.75rem !important; 
+        line-height: 1.3 !important;
+        margin-bottom: 1rem !important;
     }
 
-    /* 4. Contact Form Breathing Room */
-    /* Gives the input boxes a slightly taller, more premium feel */
-    #contact input, #contact .form-control {
+    .contact-page .lead,
+    .form-text {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+    }
+
+    .card.border-0 { 
+        padding: 1.25rem !important; 
+    }
+
+    form label {
+        font-size: 0.8rem !important;
+        letter-spacing: 1px;
+        color: #6c757d !important; 
+        margin-bottom: 0.25rem !important;
+    }
+
+    #contact input, #contact .form-control,
+    form input, form textarea {
         min-height: 50px;
-        font-size: 16px !important; /* Prevents iPhones from auto-zooming when typing */
+        font-size: 16px !important; 
+        padding: 0.5rem 1rem !important;
     }
+
+    form .btn {
+        font-size: 1.1rem !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* MOBILE FOOTER BREATHING ROOM */
+    footer .col-md-6 {
+        margin-bottom: 2.5rem !important;
+    }
+
+    footer h5 {
+        margin-bottom: 1.25rem !important;
+    }
+
+    .footer-links li,
+    footer .list-unstyled li {
+        margin-bottom: 0.85rem !important;
+    }
+
+    footer {
+        padding-bottom: 4rem !important; 
+    }
+    /* =========================================
+       HERO TYPOGRAPHY HIERARCHY FIX
+       ========================================= */
+    .video-wrap h2 {
+        font-size: 1.15rem !important; /* Shrinks it so the main title is the obvious star */
+        letter-spacing: 1px; /* Spreads the letters slightly for a high-end look */
+        opacity: 0.9; /* Softens it just a whisper */
+        margin-bottom: 2rem !important; /* Tightens up the gap before the buttons */
+    }
+}
+
+/* --- TABLET ONLY (iPads) --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1 { font-size: 3.5rem !important; }
+    h2 { font-size: 2.5rem !important; }
+    .masthead { min-height: 50vh !important; }
+    .col-md-4 { width: 50% !important; }
+    .container { padding-left: 32px !important; padding-right: 32px !important; }
+    p { line-height: 1.7 !important; }
+    section { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+}
+
+/* --- 2K DESKTOP MONITORS --- */
+@media (min-width: 1440px) {
+    html { font-size: 18px !important; }
+}
+
+/* --- 4K DESKTOP MONITORS --- */
+@media (min-width: 2560px) {
+    html { font-size: 22px !important; }
 }
