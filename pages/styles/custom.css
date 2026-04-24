@@ -527,6 +527,34 @@ h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-
     transform: scale(1.25);
 }
 /* =========================================
+   GLIGHTBOX UI FIX (ARROWS & X BUTTON)
+   ========================================= */
+
+/* 1. Force the controls to the very front of the screen */
+.glightbox-container {
+    z-index: 999999 !important;
+}
+
+/* 2. Ensure the X (Close) button is visible and white */
+.gclose, .gnext, .gprev {
+    opacity: 1 !important;
+    display: block !important;
+}
+
+.gclose svg path, 
+.gnext svg path, 
+.gprev svg path {
+    fill: #ffffff !important; /* Forces the icons to be white */
+}
+
+/* 3. Make sure the buttons aren't being 'clipped' by the screen edge */
+.gbtn {
+    min-width: 44px;
+    min-height: 44px;
+    background: rgba(0, 0, 0, 0.5) !important; /* Adds a soft dark circle behind arrows */
+    border-radius: 50%;
+}
+/* =========================================
    LARGE MONITOR SCALING (2K & 4K DISPLAYS)
    ========================================= */
 
@@ -575,5 +603,19 @@ h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-
     }
     .d-flex.align-items-center {
         margin-bottom: 12px !important;
+    }
+}
+@media (max-width: 768px) {
+    /* Prevents elements from sliding in from too far away */
+    [data-aos^='fade'][data-aos^='fade'] {
+        transform: translate(0, 20px) !important; /* Forces a very short 20px slide */
+        opacity: 0;
+        transition-property: transform, opacity;
+    }
+
+    /* Resets the element to its final position perfectly */
+    [data-aos^='fade'].aos-animate {
+        transform: translate(0, 0) !important;
+        opacity: 1;
     }
 }
