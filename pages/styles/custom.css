@@ -112,7 +112,7 @@ h1 { font-size: 3rem; }
 }
 
 .snow-page .masthead {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/pages/imgs/logos/markus-winkler-48CkLuEGgWU-unsplash.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
     min-height: 60vh;
 }
 
@@ -411,7 +411,26 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     transition: all 0.3s ease-in-out; 
 }
 .brand-logo-dark:hover { filter: brightness(0) invert(1) opacity(100%); }
+/* =========================================
+   TEXT LEGIBILITY (Prevents white text blending into bright photos)
+   ========================================= */
+.masthead h1, 
+.masthead h2, 
+.masthead p,
+.video-wrap h1, 
+.video-wrap h2,
+.video-wrap p {
+    /* Layer 1: A tight, sharp shadow to outline the letters */
+    /* Layer 2: A wide, soft shadow to separate the text from bright backgrounds */
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8), 
+                 0px 10px 25px rgba(0, 0, 0, 0.6) !important;
+}
 
+/* Also protect your buttons so they don't get lost on white backgrounds */
+.video-wrap .btn-outline-light {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+}
 
 /* =========================================
    RESPONSIVE SCALING (MOBILE, TABLET, 4K)
