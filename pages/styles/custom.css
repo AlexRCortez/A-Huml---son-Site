@@ -507,27 +507,65 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
 
 /* --- MOBILE LANDSCAPE (The "Squish" Protector) --- */
 @media (max-height: 600px) and (orientation: landscape) {
-    .masthead { padding-top: 70px !important; }
+    
+    /* 1. Release the hard height constraint so content doesn't crash into itself */
+    .home-page .masthead, 
+    .video-wrap,
+    .masthead { 
+        height: auto !important; /* Lets the box grow if the buttons need more room */
+        min-height: 100dvh !important; 
+        padding-top: 80px !important; 
+        padding-bottom: 40px !important; 
+    }
+    
     html { scroll-padding-top: 60px !important; }
 
+    /* 2. Drastically scale down the typography */
     .masthead h1, .video-wrap h1, .masthead .display-3 {
-        font-size: 1.75rem !important; 
+        font-size: 1.5rem !important; 
         margin-top: 0 !important;
         margin-bottom: 10px !important;
     }
 
-    .masthead .btn, .video-wrap .btn, .home-page .btn-outline-light {
-        padding: 6px 16px !important;
-        min-height: 38px !important; 
-        font-size: 0.8rem !important;
+    /* 3. Hide non-essential visual elements (Lines and Subtitles take up too much vertical space) */
+    .masthead hr, .video-wrap hr, 
+    .masthead p.lead, .video-wrap p.lead { 
+        display: none !important; 
     }
 
-    .masthead hr, .video-wrap hr { display: none !important; }
+    /* 4. Ultra-slim buttons and tighter gaps */
+    .masthead .btn, .video-wrap .btn, .home-page .btn-outline-light {
+        padding: 4px 12px !important;
+        min-height: 36px !important; 
+        font-size: 0.75rem !important;
+        min-width: 120px !important; /* Shrinks the buttons so they fit side-by-side */
+    }
 
+    .masthead .d-flex, .video-wrap .d-flex, .video-wrap .gap-3 {
+        gap: 10px !important; /* Tighter invisible wall between buttons */
+        margin-bottom: 0.5rem !important; 
+    }
+
+    /* 5. Prevent 'The Stretch' on your text paragraphs in the lower sections */
     p.lead, .singleCol p {
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+/* =========================================
+   ACCESSIBILITY: RESPECT "REDUCE MOTION" SETTINGS
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important; /* Turns off the glide for motion-sensitive users */
+    }
+    
+    /* Optional: You can also turn off AOS animations for these users */
+    [data-aos] {
+        transition-duration: 0ms !important;
+        opacity: 1 !important;
+        transform: translate(0) !important;
     }
 }
 
