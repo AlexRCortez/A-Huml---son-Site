@@ -109,18 +109,19 @@
       </div>
     </section>
 
-    <section id="contact" class="py-5 bg-white border-top">
+    <section id="contact" class="py-5 bg-white border-bottom">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
             
-            <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
-              <h2 class="display-5 fw-bold text-dark mb-3">Get a Free Snow Quote</h2>
-              <p style="font-size: 1.25rem; font-weight: 500; color: #4a4a4a;">Ready to secure your property? Fill out the form below for a fast response.</p>
+            <div data-aos="fade-down" data-aos-duration="1000" class="text-center mb-5">
+              <h2 class="display-5 fw-bold text-dark mb-3">Get a Free Snow Removal Quote</h2>
+              <p style="font-size: 1.25rem; font-weight: 500; color: #4a4a4a;">Don't let winter slow you down. Fill out the form below for rapid, reliable service.</p>
             </div>
 
             <div class="row g-5 align-items-center">
-              <div class="col-md-7" data-aos="fade-right" data-aos-duration="1000">
+              
+              <div data-aos="fade-right" data-aos-duration="1000" class="col-md-7">
                 <form action="https://api.web3forms.com/submit" method="POST" class="p-4 rounded-4 shadow border bg-light">
                   <input type="hidden" name="access_key" value="14621747-9745-4838-8380-fe6f3eb6c4ef">
                   
@@ -141,42 +142,69 @@
 
                   <div class="mb-3">
                     <label class="form-label fw-bold small text-uppercase">Property Details</label>
-                    <textarea class="form-control" name="message" rows="4" placeholder="Tell us about your snow removal needs..." required></textarea>
+                    <textarea class="form-control" name="message" rows="4" placeholder="Tell us about your driveway, parking lot, or walkways..." required></textarea>
                   </div>
 
                   <button type="submit" class="btn btn-dark btn-lg w-100 rounded-pill mt-2 shadow-sm">Send Quote Request</button>
                 </form>
               </div>
 
-              <div class="col-md-5" data-aos="fade-left" data-aos-duration="1000">
-                <div class="ps-lg-4">
-                  <h4 class="fw-bold mb-4">Direct Contact</h4>
-                  
-                  <div class="d-flex mb-4 align-items-center">
-                    <div class="icon-box bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
-                      <i class="bi bi-envelope"></i>
-                    </div>
-                    <p class="mb-0">tony197866@gmail.com</p>
+              <div data-aos="fade-left" data-aos-duration="1000" class="col-md-5 d-flex flex-column justify-content-center">
+                
+                <div class="d-flex mb-4 align-items-center">
+                  <div class="icon-box bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                    <i class="bi bi-snow"></i> 
                   </div>
-
-                  <div class="d-flex mb-4 align-items-center">
-                    <div class="icon-box bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
-                      <i class="bi bi-telephone"></i>
-                    </div>
-                    <p class="mb-0 fw-bold">262-745-1750</p>
-                  </div>
-
-                  <div class="mt-4 p-3 bg-light rounded-3 border-start border-primary border-4">
-                    <p class="small mb-0 text-muted"><strong>Service Area:</strong> Lake Geneva, Walworth County, and surrounding Wisconsin areas.</p>
+                  <div>
+                    <p class="mb-0 fw-bold">24/7 Rapid Response</p>
+                    <small class="text-muted">Plowing, salting, and comprehensive ice management.</small>
                   </div>
                 </div>
-              </div>
+
+                <div class="d-flex mb-4 align-items-center">
+                  <div class="icon-box bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                    <i class="bi bi-telephone"></i> 
+                  </div>
+                  <div>
+                    <p class="mb-0 fw-bold">Phone</p>
+                    <p class="mb-0 text-muted">262-745-1750</p>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-4 align-items-center">
+                  <div class="icon-box bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                    <i class="bi bi-envelope"></i> 
+                  </div>
+                  <div>
+                    <p class="mb-0 fw-bold">Email</p>
+                    <a href="mailto:a.rosas@huml-son.com" class="mb-0 small text-primary text-decoration-none d-block">a.rosas@huml-son.com</a>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-4 align-items-center">
+                  <div class="icon-box bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0">
+                    <i class="bi bi-geo-alt"></i> 
+                  </div>
+                  <div>
+                    <p class="mb-0 fw-bold">Mailing Address</p>
+                    <small class="text-muted d-block">672 W Main St, Box 44</small>
+                    <small class="text-muted d-block">Lake Geneva, WI 53147</small>
+                  </div>
+                </div>
+
+                <div class="mt-2 p-3 bg-light border-start border-primary border-4 rounded shadow-sm">
+                  <small class="text-muted d-block text-uppercase fw-bold">Service Area</small>
+                  <span>Lake Geneva & Surrounding Areas</span>
+                </div>
+
+              </div> 
+              
             </div>
           </div>
         </div>
       </div>
     </section>
-
+  
     <footer class="bg-dark text-white pt-5 pb-3">
       <div class="container">
         <div class="row g-4">
@@ -187,28 +215,36 @@
           <div class="col-lg-2 col-md-6">
             <h5 class="text-uppercase fw-bold mb-3">Menu</h5>
             <ul class="list-unstyled footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="Interior.html">Interior</a></li>
-              <li><a href="Exterior.html">Exterior</a></li>
-              <li><a href="snowplow.html">Snow</a></li>
+              <li><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+              <li><a href="Interior.html" class="text-white-50 text-decoration-none">Interior</a></li>
+              <li><a href="Exterior.html" class="text-white-50 text-decoration-none">Exterior</a></li>
+              <li><a href="snowplow.html" class="text-white-50 text-decoration-none">Snow</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-6">
             <h5 class="text-uppercase fw-bold mb-3">More</h5>
             <ul class="list-unstyled footer-links">
-              <li><a href="contactUs.html">Contact Us</a></li>
-              <li><a href="aboutus.html">About Us</a></li>
-              <li><a href="Gallery.html">Gallery</a></li>
+              <li><a href="contactUs.html" class="text-white-50 text-decoration-none">Contact Us</a></li>
+              <li><a href="aboutus.html" class="text-white-50 text-decoration-none">About Us</a></li>
+              <li><a href="Gallery.html" class="text-white-50 text-decoration-none">Gallery</a></li>
             </ul>
           </div>
           <div class="col-lg-4 col-md-6">
-            <h5 class="text-uppercase fw-bold mb-3">Contact</h5>
-            <ul class="list-unstyled text-white-50">
-              <li class="mb-2"><i class="bi bi-telephone me-2"></i> Office: 262-348-9747</li>
-              <li class="mb-2"><i class="bi bi-phone me-2"></i> Primary: 262-745-1750</li>
-              <li class="mb-2"><i class="bi bi-envelope me-2"></i> tony197866@gmail.com</li>
-            </ul>
-          </div>
+    <h5 class="text-uppercase fw-bold mb-3">Contact</h5>
+    <ul class="list-unstyled text-white-50">
+        <li class="mb-3"><i class="bi bi-phone me-2"></i> Primary: 262-745-1750</li>
+        <li class="mb-3"><i class="bi bi-envelope me-2"></i> a.rosas@huml-son.com</li>
+        
+        <li class="mb-2 d-flex">
+            <i class="bi bi-geo-alt me-2 mt-1"></i>
+            <div>
+                <strong>Mailing Address:</strong><br>
+                672 W Main St, Box 44<br>
+                Lake Geneva, WI 53147
+            </div>
+        </li>
+    </ul>
+</div>
         </div>
         <hr class="my-4 border-secondary">
         <div class="text-center">
