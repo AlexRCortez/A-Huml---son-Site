@@ -438,6 +438,21 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
         height: 100vh !important;
         min-height: 100dvh !important; 
         height: 100dvh !important;
+        [data-aos] {
+        transition-duration: 0.3s !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    #premium-services-section { /* Make sure you give your section this ID in your HTML */
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .card {
+        margin-bottom: 1.5rem !important;
+    }
+    .brand-logo {
+        width: 120px !important; /* Forces logos to stay small and horizontal */
+        margin: 10px; /* Forces spacing so they don't touch */
     }
     
     .masthead h1, .video-wrap h1, .masthead .display-3 {
