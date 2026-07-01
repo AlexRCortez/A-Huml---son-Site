@@ -448,9 +448,7 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
         transition-duration: 1.2s !important; 
         
         /* Ease-Out-Expo curve: extremely smooth deceleration */
-        transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important; 
-        
-        transform: none !important; 
+        transition-timing-function: cubic-bezier(0.42, 0, 1.0, 1.0) !important; 
         opacity: 1 !important;
     }
     /* 2. Keep your other mobile fixes clean and properly formatted */
