@@ -442,18 +442,19 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     }
 
     /* Fixed: Now outside the block above */
-  [data-aos] {
-        transition-duration: 0.5s !important;
-        /* Remove "transform: none" to keep movement */
-        /* Keep "opacity: 1" so they don't disappear */
-        /* BUT reset the transform to simple fade only */
-        transform: translate3d(0, 0, 0) !important; 
+ /* 1. Restore the movement, but speed it up to 600ms so it doesn't jitter */
+    [data-aos] {
+        transition-duration: 0.8s !important; /* Slightly longer gives it room to breathe */
+        transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; /* This is the secret sauce for smooth movement */
+        transform: none !important; /* Reset to allow the library to handle the slide */
+        opacity: 1 !important;
     }
+    /* 2. Keep your other mobile fixes clean and properly formatted */
     #premium-services-section {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
     }
-
+    
     .card {
         margin-bottom: 1.5rem !important;
     }
