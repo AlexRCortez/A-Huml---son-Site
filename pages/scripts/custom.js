@@ -1,5 +1,4 @@
-
-   // /js/custom.js
+// /js/custom.js
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -7,15 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 1. AOS ANIMATION WITH HORSEPOWER CHECK
     // ==========================================
     let isSlowDevice = false;
-    
-    // Loosened the rules: Now it ONLY triggers on extremely old devices (under 4GB RAM or under 4 cores)
     if (navigator.deviceMemory && navigator.deviceMemory < 4) isSlowDevice = true;
     if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) isSlowDevice = true;
 
-    // AGENCY DIAGNOSTIC: Right-click your website, hit "Inspect", and click the "Console" tab to read this!
-    console.log("Diagnostic - RAM:", navigator.deviceMemory, "GB");
-    console.log("Diagnostic - CPU Cores:", navigator.hardwareConcurrency);
-    console.log("Diagnostic - Animations Disabled?:", isSlowDevice);
+    // AGENCY DIAGNOSTIC: Uncomment these lines to test device speeds in the console
+    // console.log("Diagnostic - RAM:", navigator.deviceMemory, "GB");
+    // console.log("Diagnostic - CPU Cores:", navigator.hardwareConcurrency);
+    // console.log("Diagnostic - Animations Disabled?:", isSlowDevice);
 
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -24,11 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             offset: 100,
             disable: isSlowDevice 
         });
-    } else {
-        console.error("AOS Library failed to load.");
     }
-
-    // ... (Keep the GLightbox and Contact Form code exactly as it is below this)
 
     // ==========================================
     // 2. GLIGHTBOX GALLERY SETUP
@@ -41,7 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
             zoomable: false 
         });
 
-        // Mobile back-button safety net
         lightbox.on('open', () => {
             window.history.pushState({ galleryOpen: true }, '', window.location.href);
         });
@@ -62,15 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // ==========================================
     // 3. CONTACT FORM & PHONE FORMATTING
     // ==========================================
-    // SAFETY CHECK: Only run this if we are on a page that actually has the contact form!
-    // This stops the script from crashing on the Home or Gallery pages.
     const contactForm = document.querySelector('form[action="https://api.web3forms.com/submit"]');
 
     if (contactForm) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const phoneInput = contactForm.querySelector('input[name="phone"]');
 
-        // Clean, real-time phone formatter: formats to (123) 456-7890 as you type
         if (phoneInput) {
             phoneInput.addEventListener('input', function(e) {
                 let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
@@ -78,13 +67,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
 
-        // Web3Forms API Submission
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const formData = new FormData(contactForm);
-            // Assuming the access key is already an <input type="hidden"> in your HTML, 
-            // you don't need to append it again here.
+            // THIS IS WHERE THE MAGIC HAPPENS: We inject the key here
+            formData.append("access_key", "2b629606-5c17-495b-9e49-895fcdf4ef35");
 
             const originalText = submitBtn.textContent;
             submitBtn.textContent = "Sending...";
@@ -104,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     alert("Error: " + data.message);
                 }
-
             } catch (error) {
                 alert("Something went wrong. Please check your connection and try again.");
             } finally {
@@ -113,13 +100,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    // Add this inside the DOMContentLoaded function in /js/custom.js
-window.addEventListener('scroll', function() {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
+
+    // ==========================================
+    // 4. NAVBAR SCROLL EFFECT
+    // ==========================================
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.navbar');
+        if (nav) {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
+    });
 });

@@ -600,3 +600,51 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
 @media (min-width: 2560px) {
     html { font-size: 22px !important; }
 }
+/* Container for all logos */
+.logo-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+/* The box every logo sits inside */
+.logo-container {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Base image styling */
+.logo-container img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(70%);
+    transition: all 0.3s ease;
+}
+
+.logo-container img:hover {
+    filter: grayscale(0%) opacity(100%);
+}
+
+/* TARGETED FIXES */
+/* Shrink the Festool logo specifically */
+.festool-limit {
+    max-width: 140px; 
+}
+
+/* Give the others a bit more room to fill their container */
+.bm-expand {
+    max-height: 50px !important;
+}
+
+.graco-expand {
+    max-height: 50px !important;
+}
+/* Update this specific line in your CSS */
+.bm-expand {
+    max-height: 75px !important; 
+}
