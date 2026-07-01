@@ -461,11 +461,6 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     .card {
         margin-bottom: 1.5rem !important;
     }
-
-    .brand-logo {
-        width: 120px !important; 
-        margin: 10px; 
-    }
     
     .masthead h1, .video-wrap h1, .masthead .display-3 {
         font-size: 2.25rem !important; 
@@ -628,50 +623,49 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     html { font-size: 22px !important; }
 }
 /* Container for all logos */
+/* =========================================
+   10. LOGO STRIP (CLEAN & UNBREAKABLE)
+   ========================================= */
+/* 1. Keep the flexible strip, no forced box widths */
 .logo-strip {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 40px; 
 }
 
-/* The box every logo sits inside */
 .logo-container {
-    height: 70px;
-    display: flex;
+    height: 90px; /* Keep consistent height */
+    display: 0 0 200px; /* Prevents logos from stretching too wide */
     align-items: center;
     justify-content: center;
 }
 
-/* Base image styling */
+/* 2. Standardize image behavior */
 .logo-container img {
-    max-height: 100%;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) opacity(70%);
+    height: 100% !important; 
+    width: auto !important; 
+    
+    /* This 'max-width' prevents wide logos from becoming too big */
+    max-width: 180px; 
+    
+    object-fit: contain !important;
+   filter: grayscale(100%) brightness(0.6) contrast(1.1);
     transition: all 0.3s ease;
+    will-change: filter;
 }
 
 .logo-container img:hover {
-    filter: grayscale(0%) opacity(100%);
+    filter: grayscale(0%) brightness(1) contrast(1);
 }
 
-/* TARGETED FIXES */
-/* Shrink the Festool logo specifically */
-.festool-limit {
-    max-width: 140px; 
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .logo-container { height: 60px; flex: 0 0 140px; }
+    .logo-container img { max-width: 120px; }
 }
-
-/* Give the others a bit more room to fill their container */
-.bm-expand {
-    max-height: 50px !important;
-}
-
-.graco-expand {
-    max-height: 50px !important;
-}
-/* Update this specific line in your CSS */
-.bm-expand {
-    max-height: 75px !important; 
+.nudge-logo {
+    transform: scale(1.15); /* Adjust 1.15 to 1.1 or 1.2 until it looks perfect */
+    transform-origin: center;
 }
