@@ -636,8 +636,9 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
 }
 
 .logo-container {
-    height: 75px; /* Keep consistent height */
-    display: 0 0 200px; /* Prevents logos from stretching too wide */
+    height: 75px; 
+    display: flex; /* Fixed: Corrected display property */
+    flex: 0 0 200px; /* Ensures consistent layout width */
     align-items: center;
     justify-content: center;
 }
@@ -660,12 +661,19 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     filter: grayscale(0%) brightness(1) contrast(1);
 }
 
-/* Mobile adjustment */
+/* Mobile: Force a clean 2x2 grid */
 @media (max-width: 768px) {
-    .logo-container { height: 60px; }
-    .logo-strip { gap: 40px; } /* Tighten gap on mobile */
+    .logo-container { 
+        height: 60px; 
+        flex: 0 0 45%; /* Forces 2 columns on mobile */
+    }
+    .logo-strip { 
+        gap: 20px; 
+    }
 }
+
+/* Use this class for the Sherwin-Williams logo to nudge it larger */
 .nudge-logo {
-    transform: scale(1.15); /* Adjust 1.15 to 1.1 or 1.2 until it looks perfect */
+    transform: scale(1.15);
     transform-origin: center;
 }
