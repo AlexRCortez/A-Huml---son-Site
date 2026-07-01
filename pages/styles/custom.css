@@ -442,12 +442,13 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     }
 
     /* Fixed: Now outside the block above */
-    [data-aos] {
-        transition-duration: 0.3s !important;
-        transform: none !important;
-        opacity: 1 !important;
+  [data-aos] {
+        transition-duration: 0.5s !important;
+        /* Remove "transform: none" to keep movement */
+        /* Keep "opacity: 1" so they don't disappear */
+        /* BUT reset the transform to simple fade only */
+        transform: translate3d(0, 0, 0) !important; 
     }
-
     #premium-services-section {
         padding-top: 2rem !important;
         padding-bottom: 2rem !important;
