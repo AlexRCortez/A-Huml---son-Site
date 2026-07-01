@@ -632,11 +632,11 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 40px; 
+    gap: 80px; 
 }
 
 .logo-container {
-    height: 90px; /* Keep consistent height */
+    height: 75px; /* Keep consistent height */
     display: 0 0 200px; /* Prevents logos from stretching too wide */
     align-items: center;
     justify-content: center;
@@ -662,8 +662,8 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
 
 /* Mobile adjustment */
 @media (max-width: 768px) {
-    .logo-container { height: 60px; flex: 0 0 140px; }
-    .logo-container img { max-width: 120px; }
+    .logo-container { height: 60px; }
+    .logo-strip { gap: 40px; } /* Tighten gap on mobile */
 }
 .nudge-logo {
     transform: scale(1.15); /* Adjust 1.15 to 1.1 or 1.2 until it looks perfect */
