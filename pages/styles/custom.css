@@ -445,7 +445,7 @@ footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
  /* 1. Restore the movement, but speed it up to 600ms so it doesn't jitter */
    [data-aos] {
         /* Keep the slow, luxury speed */
-        transition-duration: 0.6s !important; 
+        transition-duration: 0.8s !important; 
         
         /* This is the true 'Ease-Out' curve (smooth deceleration) */
         transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important; 
