@@ -143,23 +143,23 @@ section {
    The browser will load these first on all devices.
    ========================================================================== */
 .exterior-page .masthead { 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imgs/Exterior/ext-white-mansions-mobile.webp'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imgs/Exterior/ext.\ white\ mansions.webp'); 
     min-height: 60vh; 
 }
 .snow-page .masthead { 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/snow-mobile.webp'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova\ \(1\).webp'); 
     min-height: 60vh; 
 }
 .about-page .masthead { 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Exterior/com2-mobile.webp'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Exterior/_com2.webp'); 
     min-height: 60vh; 
 }
 .interior-page .masthead { 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/interior-hero-mobile.webp'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/unpslashint2.webp'); 
     min-height: 60vh; 
 }
 .contact-page .masthead { 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../imgs/logos/pastel-banner-mobile.webp'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../imgs/logos/pastel-pink-paint-wall-website-banner-template\ \(1\).webp'); 
     min-height: 60vh; 
 }
 
@@ -170,10 +170,10 @@ section {
    ========================================================================== */
 @media (min-width: 768px) {
     .exterior-page .masthead { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imgs/Exterior/ext. white mansions.webp'); 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imgs/Exterior/ext.\ white\ mansions.webp'); 
     }
     .snow-page .masthead { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp'); 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova\ \(1\).webp'); 
     }
     .about-page .masthead { 
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Exterior/_com2.webp'); 
@@ -182,7 +182,7 @@ section {
         background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/unpslashint2.webp'); 
     }
     .contact-page .masthead { 
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../imgs/logos/pastel-pink-paint-wall-website-banner-template.webp'); 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../imgs/logos/pastel-pink-paint-wall-website-banner-template\ \(1\).webp'); 
     }
 }
 .video-wrap {
