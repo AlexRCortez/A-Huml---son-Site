@@ -1,171 +1,176 @@
-/* =========================================
-   1. GLOBAL VARIABLES & BASE RESETS
-   ========================================= */
+.btn, .masthead .subtitle, .masthead h2, a, body, button, li, p, span {
+    font-family: Montserrat, sans-serif !important
+}
+
+.masthead, .video-wrap, body, html {
+    position: relative
+}
+
 :root {
-    --brand-primary: #474646; 
-    --brand-hover: #1f2129;   
+    --brand-primary: #474646;
+    --brand-hover: #1f2129
 }
 
 html {
     scroll-behavior: smooth !important;
-    scroll-padding-top: 50px; 
+    scroll-padding-top: 50px
 }
 
-html, body {
+body, html {
     overflow-x: hidden;
-    width: 100%;
-    position: relative;
+    width: 100%
 }
 
 ::selection {
-    background-color: var(--brand-primary); 
-    color: #ffffff; 
+    background-color: var(--brand-primary);
+    color: #fff
 }
 
-::-moz-selection { 
+::-moz-selection {
     background-color: var(--brand-primary);
-    color: #ffffff;
+    color: #fff
 }
 
 .darkBG {
-    background-color: #f8f9fa; 
-    color: #333; 
+    background-color: #f8f9fa;
+    color: #333
 }
 
-/* =========================================
-   2. GLOBAL TYPOGRAPHY & LEGIBILITY
-   ========================================= */
-body, p, a, span, li, button, .btn {
-    font-family: 'Montserrat', sans-serif !important;
+.display-3, .display-4, .display-5, .display-6, .navbar-brand, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif !important
 }
 
-h1, h2, h3, h4, h5, h6, .display-3, .display-4, .display-5, .display-6, .navbar-brand {
-    font-family: 'Playfair Display', serif !important;
+h1 {
+    font-size: 3rem
 }
 
-h1 { font-size: 3rem; }
-
-/* Text Shadow for bright backgrounds */
-.masthead h1, .masthead h2, .masthead p,
-.video-wrap h1, .video-wrap h2, .video-wrap p {
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8), 0px 10px 25px rgba(0, 0, 0, 0.6) !important;
+.masthead h1, .masthead h2, .masthead p, .video-wrap h1, .video-wrap h2, .video-wrap p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, .8), 0 10px 25px rgba(0, 0, 0, .6) !important
 }
 
-/* =========================================
-   3. APPLE-STYLE SCROLLING NAVBAR
-   ========================================= */
 .navbar {
-    background: transparent !important;
+    background: 0 0 !important;
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
     border-bottom: 1px solid rgba(255, 255, 255, 0);
-    transition: all 0.4s ease;
+    transition: .4s
 }
 
 .navbar.scrolled {
-    background: rgba(15, 15, 15, 0.70) !important; 
+    background: rgba(15, 15, 15, .7) !important;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 0.5rem; 
-    padding-bottom: 0.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5)
 }
 
-@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+@supports (-webkit-backdrop-filter:none) or (backdrop-filter:none) {
     .navbar {
-        background: rgba(20, 20, 20, 0.75) !important; 
+        background: rgba(20, 20, 20, .75) !important;
         backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%)
     }
+}
+
+.bg-image, .masthead {
+    background-size: cover
 }
 
 .navbar-brand {
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1px
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    font-weight: 500 !important; 
-    letter-spacing: 0.5px; 
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease; 
+    font-weight: 500 !important;
+    letter-spacing: .5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, .6);
+    transition: .3s
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
-    color: #ffffff !important;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, .8);
+    color: #fff !important
 }
 
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #ffffff !important;
-    font-weight: bold !important;
+    color: #fff !important;
+    font-weight: 700 !important
 }
 
-/* =========================================
-   4. LAYOUT & HERO SECTIONS
-   ========================================= */
 section {
     padding-top: 5rem !important;
-    padding-bottom: 5rem !important;
+    padding-bottom: 5rem !important
 }
 
 .masthead {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/unsplash3.webp');
-    
-    min-height: 75vh; 
-    background-size: cover;
-    background-position: center; 
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../imgs/Interior/unsplash3.webp');
+    min-height: 75vh;
+    background-position: center;
     background-repeat: no-repeat;
-    position: relative;
-    color: white;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-/* =========================================
-   PREMIUM DEPTH: TYPOGRAPHY CONTRAST
-   ========================================= */
-.masthead h2, 
-.masthead .subtitle {
-    letter-spacing: 4px !important; /* Spreads the letters out */
-    text-transform: uppercase !important; /* Forces caps for a structured, architectural look */
-    font-size: 1.1rem !important; /* Slightly smaller to contrast with the massive H1 */
-    font-family: 'Montserrat', sans-serif !important; /* Use the clean sans-serif to contrast the serif H1 */
-    opacity: 0.9;
+    text-align: center
 }
 
-.exterior-page .masthead { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../imgs/Exterior/ext. white mansions.webp'); min-height: 60vh; }
-.snow-page .masthead { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp'); min-height: 60vh; }
-.about-page .masthead { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Exterior/_com2.webp'); min-height: 60vh; }
-.interior-page .masthead { background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../imgs/Interior/unpslashint2.webp'); min-height: 60vh; }
-.contact-page .masthead { background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../imgs/logos/pastel-pink-paint-wall-website-banner-template.webp'); min-height: 60vh; }
+.masthead .subtitle, .masthead h2 {
+    letter-spacing: 4px !important;
+    text-transform: uppercase !important;
+    font-size: 1.1rem !important;
+    opacity: .9
+}
 
+.exterior-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../imgs/Exterior/ext. #fff mansions.webp');
+    min-height: 60vh
+}
 
+.snow-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../imgs/Snow/parked-electric-cars-rent-chisinau-moldova.webp');
+    min-height: 60vh
+}
+
+.about-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../imgs/Exterior/_com2.webp');
+    min-height: 60vh
+}
+
+.interior-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('../imgs/Interior/unpslashint2.webp');
+    min-height: 60vh
+}
+
+.contact-page .masthead {
+    background-image: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .1)), url('../imgs/logos/pastel-pink-paint-wall-website-banner-template.webp');
+    min-height: 60vh
+}
 
 .video-wrap {
-    position: relative;
-    height: 100vh; 
+    height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-color: #000; 
+    background-color: #000
+}
+
+.bg-image, .bg-video, .color-overlay {
+    position: absolute
 }
 
 .bg-image {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center 35%; 
-    z-index: 0;
+    background-position: center 35%;
+    z-index: 0
 }
 
 .bg-video {
-    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -173,182 +178,184 @@ section {
     width: auto;
     height: auto;
     transform: translate(-50%, -50%);
-    z-index: 0;
+    z-index: 0
+}
+.z-index-2 {
+    z-index: 2
 }
 
-.z-index-2 { z-index: 2; }
-
 .color-overlay {
-    position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0, 0, 0, .6);
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 1
 }
 
 .singleCol {
     max-width: 750px;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
-/* =========================================
-   5. UI COMPONENTS (Buttons, Cards, Images)
-   ========================================= */
 .btn, .card {
-    border-radius: 6px !important; 
+    border-radius: 6px !important
 }
 
 .btn-primary {
     background-color: var(--brand-primary) !important;
     border-color: var(--brand-primary) !important;
-    color: #ffffff !important; 
-    font-weight: bold;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important; 
+    color: #fff !important;
+    font-weight: 700;
+    transition: .4s cubic-bezier(.165, .84, .44, 1) !important
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25) !important; 
-    background-color: var(--brand-hover) !important; 
-    color: #ffffff !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .25) !important;
+    background-color: var(--brand-hover) !important;
+    color: #fff !important
 }
 
 .video-wrap .btn-outline-light {
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .6)
 }
 
 .masthead .btn, .video-wrap .btn {
     min-width: 160px;
-    text-align: center;
+    text-align: center
 }
 
-.card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card {
+    transition: transform .3s, box-shadow .3s
+}
+
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .1) !important
 }
 
 .icon-box {
     width: 40px !important;
     height: 40px !important;
-    min-width: 40px !important; 
-    font-size: 1.2rem; 
-    background-color: #0d6efd; 
+    min-width: 40px !important;
+    font-size: 1.2rem;
+    background-color: #0d6efd
 }
 
 .badge.rounded-pill {
-    font-size: 0.9rem !important;
+    font-size: .9rem !important;
     text-transform: uppercase;
-    letter-spacing: 2px;     
+    letter-spacing: 2px;
     padding: 10px 25px !important;
     font-weight: 700 !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(255, 255, 255, .2)
 }
 
-/* Image Consistency & Polish */
 .card img, .classic-gallery-item img {
-    aspect-ratio: 4 / 3 !important; 
-    object-fit: cover !important;   
+    aspect-ratio: 4/3 !important;
+    object-fit: cover !important
 }
 
 .card img, .profile-img {
-    filter: contrast(1.05) saturate(1.05); 
-    border-radius: 8px !important; 
+    filter: contrast(1.05) saturate(1.05);
+    border-radius: 8px !important
 }
 
 .profile-img {
-    width: 100% !important;       
-    max-width: 500px !important;  
-    height: 400px !important;     
-    object-fit: cover !important; 
-    border: 8px solid #ffffff !important; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important; 
-    margin: 0 auto !important;    
-    display: block !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    border: 8px solid #fff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .1) !important;
+    margin: 0 auto !important;
+    display: block !important
 }
 
-/* =========================================
-   6. PREMIUM FORMS & CONTACT
-   ========================================= */
-.contact-info .fa { padding-right: 5px; }
+.contact-info .fa {
+    padding-right: 5px
+}
 
-#contact input, 
-#contact textarea,
-#contact .form-control,
-.contact-page form .form-control {
-    background-color: #fcfcfc !important; 
+#contact .form-control, #contact input, #contact textarea, .contact-page form .form-control {
+    background-color: #fcfcfc !important;
     border: 1px solid #e0e0e0 !important;
     border-radius: 6px !important;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.02) !important; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .02) !important;
     font-size: 18px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 0.75rem 1rem;
-    transition: all 0.3s ease !important;
+    padding: .75rem 1rem;
+    transition: .3s !important
 }
 
-#contact input { height: 55px; }
+#contact input {
+    height: 55px
+}
 
-#contact input:focus, 
-#contact textarea:focus,
-.contact-page form .form-control:focus {
-    background-color: #ffffff !important;
-    border-color: #2b2b2b !important; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; 
-    outline: none !important;
+#contact input:focus, #contact textarea:focus, .contact-page form .form-control:focus {
+    background-color: #fff !important;
+    border-color: #2b2b2b !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .05) !important;
+    outline: 0 !important
 }
 
 #contact button#submit {
     background: #2b2b2b;
     border: none;
     border-radius: 50px;
-    color: #ffffff;
+    color: #fff;
     height: 50px;
-    margin-top: 24px;
+    margin-top: 24px
 }
 
 #contact button#submit:hover {
     background: #7682cc;
-    color: #ffffff;
+    color: #fff
 }
 
-/* =========================================
-   7. GALLERY & GLIGHTBOX FIXES
-   ========================================= */
 .carousel img {
-    height: 500px; 
-    width: 100%;   
+    height: 500px;
+    width: 100%;
     object-fit: cover;
-    border-radius: 15px; 
+    border-radius: 15px
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon {
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.4));
-    width: 2.5rem; 
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, .4));
+    width: 2.5rem;
     height: 2.5rem;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27); 
+    transition: transform .3s cubic-bezier(.175, .885, .32, 1.27)
 }
 
-.carousel-control-prev, .carousel-control-next {
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-    background: transparent !important; 
+.carousel-control-next, .carousel-control-prev {
+    opacity: .6;
+    transition: opacity .3s;
+    background: 0 0 !important
 }
 
-.carousel-control-prev:hover, .carousel-control-next:hover { opacity: 1; }
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon { transform: scale(1.25); }
+.carousel-control-next:hover, .carousel-control-prev:hover {
+    opacity: 1
+}
+
+.carousel-control-next:hover .carousel-control-next-icon, .carousel-control-prev:hover .carousel-control-prev-icon {
+    transform: scale(1.25)
+}
 
 .classic-gallery-item {
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     cursor: pointer;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-    will-change: transform;
+    transition: transform .4s cubic-bezier(.165, .84, .44, 1), box-shadow .4s;
+    will-change: transform
+}
+
+.brand-logo, .brand-logo-dark {
+    width: auto;
+    object-fit: contain;
+    transition: .3s ease-in-out
 }
 
 .classic-gallery-item img {
@@ -356,7 +363,7 @@ section {
     width: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease; 
+    transition: transform .5s
 }
 
 .classic-overlay {
@@ -364,318 +371,399 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-    padding: 30px 20px 20px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, .8), transparent);
+    padding: 30px 20px 20px;
     text-align: center;
-    z-index: 2; 
+    z-index: 2
 }
 
-@media (hover: hover) and (pointer: fine) {
+.gbtn, .gslide-image {
+    background: 0 0 !important
+}
+
+@media (hover:hover) and (pointer:fine) {
     .classic-gallery-item:hover {
-        transform: translateY(-6px); 
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important; 
+        transform: translateY(-6px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, .15) !important
     }
+
     .classic-gallery-item:hover img {
-        transform: scale(1.05); 
-        filter: brightness(0.85);
+        transform: scale(1.05);
+        filter: brightness(.85)
     }
 }
 
-.glightbox-container { z-index: 999999 !important; }
+.glightbox-container {
+    z-index: 999999 !important
+}
+
 .glightbox-container .goverlay {
-  background: rgba(0, 0, 0, 0.5) !important; 
-  backdrop-filter: blur(10px) !important; 
-  -webkit-backdrop-filter: blur(10px) !important; 
+    background: rgba(0, 0, 0, .5) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important
 }
 
-.gslide-image { background: transparent !important; box-shadow: none !important; }
+.gslide-image {
+    box-shadow: none !important
+}
+
 .gslide-image img {
-  max-width: 80vw !important;
-  max-height: 80vh !important;
-  border-radius: 12px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    max-width: 80vw !important;
+    max-height: 80vh !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .5) !important
 }
 
-.gclose, .gnext, .gprev { opacity: 1 !important; display: block !important; }
-.gclose svg path, .gnext svg path, .gprev svg path { fill: #ffffff !important; }
-.gbtn { min-width: 44px; min-height: 44px; background: transparent !important; }
-.gclose svg, .gnext svg, .gprev svg { filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.6)) !important; transition: transform 0.2s ease; }
-.gbtn:hover svg { transform: scale(1.15); }
+.gclose, .gnext, .gprev {
+    opacity: 1 !important;
+    display: block !important
+}
 
-/* =========================================
-   8. FOOTER & LOGOS
-   ========================================= */
-.footer-links li { margin-bottom: 0.5rem; }
-.footer-links a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: color 0.3s ease; }
-.footer-links a:hover { color: #debd00; }
-footer h5 { letter-spacing: 1px; font-size: 1.1rem; }
-.footerPA{ font-size: medium; }
+.gclose svg path, .gnext svg path, .gprev svg path {
+    fill: #ffffff !important
+}
+
+.gbtn {
+    min-width: 44px;
+    min-height: 44px
+}
+
+.gclose svg, .gnext svg, .gprev svg {
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, .6)) !important;
+    transition: transform .2s
+}
+
+.gbtn:hover svg {
+    transform: scale(1.15)
+}
+
+.footer-links li {
+    margin-bottom: .5rem
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, .6);
+    text-decoration: none;
+    transition: color .3s
+}
+
+.footer-links a:hover {
+    color: #debd00
+}
+
+footer h5 {
+    letter-spacing: 1px;
+    font-size: 1.1rem
+}
+
+.footerPA {
+    font-size: medium
+}
 
 .brand-logo {
-    max-height: 100px; 
-    width: auto; 
-    object-fit: contain;
-    filter: grayscale(100%) opacity(80%); 
-    transition: all 0.3s ease-in-out; 
+    max-height: 100px;
+    filter: grayscale(100%) opacity(80%)
 }
-.brand-logo:hover { filter: grayscale(0%) opacity(100%); }
+
+.brand-logo:hover {
+    filter: grayscale(0%) opacity(100%)
+}
 
 .brand-logo-dark {
-    max-height: 60px; 
-    width: auto; 
-    object-fit: contain;
-    filter: brightness(0) invert(1) opacity(60%); 
-    transition: all 0.3s ease-in-out; 
+    max-height: 60px;
+    filter: brightness(0) invert(1) opacity(60%)
 }
-.brand-logo-dark:hover { filter: brightness(0) invert(1) opacity(100%); }
 
-/* =========================================
-   9. RESPONSIVE SCALING (MOBILE, TABLET, 4K)
-   ========================================= */
+.brand-logo-dark:hover {
+    filter: brightness(0) invert(1) opacity(100%)
+}
 
-/* --- MOBILE ONLY (Phones) --- */
-/* --- MOBILE ONLY (Phones) --- */
-@media (max-width: 768px) {
+@media (max-width:768px) {
+    .card, .masthead hr, .video-wrap hr {
+        margin-bottom: 1.5rem !important
+    }
+
     .home-page .masthead, .video-wrap {
-        min-height: 100vh !important; 
+        min-height: 100vh !important;
         height: 100vh !important;
-        min-height: 100dvh !important; 
-        height: 100dvh !important;
+        min-height: 100dvh !important;
+        height: 100dvh !important
     }
 
-    /* Fixed: Now outside the block above */
- /* 1. Restore the movement, but speed it up to 600ms so it doesn't jitter */
-   [data-aos] {
-        /* Keep the slow, luxury speed */
-        transition-duration: 1s !important; 
-        
-        /* This is the true 'Ease-Out' curve (smooth deceleration) */
-        transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important; 
-        
-        /* REMOVED: opacity: 1 !important; (This was breaking the animation) */
+    [data-aos] {
+        transition-duration: 1s !important;
+        transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important
     }
-    /* 2. Keep your other mobile fixes clean and properly formatted */
+
     #premium-services-section {
         padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+        padding-bottom: 2rem !important
     }
-    
-    .card {
-        margin-bottom: 1.5rem !important;
-    }
-    
-    .masthead h1, .video-wrap h1, .masthead .display-3 {
-        font-size: 2.25rem !important; 
+
+    .masthead .display-3, .masthead h1, .video-wrap h1 {
+        font-size: 2.25rem !important;
         line-height: 1.2 !important;
-        padding: 0 15px; 
+        padding: 0 15px
     }
 
     .masthead .d-flex, .video-wrap .d-flex, .video-wrap .gap-3 {
-        flex-wrap: wrap !important; 
-        gap: 15px !important; 
+        flex-wrap: wrap !important;
+        gap: 15px !important;
         justify-content: center !important;
-        margin-bottom: 1.5rem !important; 
+        margin-bottom: 1.5rem !important
     }
 
-    .masthead .btn, .video-wrap .btn, .home-page .btn-outline-light {
-        margin: 0 !important; 
-        padding: 12px 24px !important;  
-        min-height: 48px !important; 
+    .home-page .btn-outline-light, .masthead .btn, .video-wrap .btn {
+        margin: 0 !important;
+        padding: 12px 24px !important;
+        min-height: 48px !important
     }
-    
+
     .masthead hr, .video-wrap hr {
-        margin-top: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
+        margin-top: 1.5rem !important
     }
 
-    .bg-image { background-position: center 20% !important; }
-    h1 { font-size: calc(1.525rem + 3.3vw); }
-    .display-3 { font-size: 2.5rem !important; }
-    .display-5 { font-size: 2rem !important; }
-    p { font-size: 1.05rem !important; line-height: 1.65 !important; }
-    
+    .bg-image {
+        background-position: center 20% !important
+    }
+
+    h1 {
+        font-size: calc(1.525rem + 3.3vw)
+    }
+
+    .display-3 {
+        font-size: 2.5rem !important
+    }
+
+    .display-5 {
+        font-size: 2rem !important
+    }
+
+    p {
+        font-size: 1.05rem !important;
+        line-height: 1.65 !important
+    }
+
     .btn {
-        min-height: 48px; 
+        min-height: 48px;
         padding-top: 12px !important;
         padding-bottom: 12px !important;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
+        justify-content: center
     }
-    
-    .navbar-brand { font-size: 1.15rem !important; letter-spacing: 0.5px; }
 
-    /* Forms Re-Scale */
-    .contact-page h2, h2.display-6, .text-center h2 {
-        font-size: 1.75rem !important; 
+    .navbar-brand {
+        font-size: 1.15rem !important;
+        letter-spacing: .5px
+    }
+
+    .contact-page h2, .text-center h2, h2.display-6 {
+        font-size: 1.75rem !important;
         line-height: 1.3 !important;
-        margin-bottom: 1rem !important;
+        margin-bottom: 1rem !important
     }
-    .contact-page .lead, .form-text { font-size: 1rem !important; line-height: 1.5 !important; }
-    .card.border-0 { padding: 1.25rem !important; }
-    form label { font-size: 0.8rem !important; letter-spacing: 1px; color: #6c757d !important; margin-bottom: 0.25rem !important; }
-    
-    form input, form textarea, #contact input, #contact .form-control, .contact-page form .form-control {
+
+    .contact-page .lead, .form-text {
+        font-size: 1rem !important;
+        line-height: 1.5 !important
+    }
+
+    .card.border-0 {
+        padding: 1.25rem !important
+    }
+
+    form label {
+        font-size: .8rem !important;
+        letter-spacing: 1px;
+        color: #6c757d !important;
+        margin-bottom: .25rem !important
+    }
+
+    #contact .form-control, #contact input, .contact-page form .form-control, form input, form textarea {
         min-height: 50px;
-        font-size: 16px !important; 
-        padding: 0.5rem 1rem !important;
+        font-size: 16px !important;
+        padding: .5rem 1rem !important
     }
-    form .btn { font-size: 1.1rem !important; padding-top: 10px !important; padding-bottom: 10px !important; }
 
-    /* Footer Breathing Room */
-    footer .col-md-6 { margin-bottom: 2.5rem !important; }
-    footer h5 { margin-bottom: 1.25rem !important; }
-    .footer-links li, footer .list-unstyled li { margin-bottom: 0.85rem !important; }
-    footer { padding-bottom: 4rem !important; }
-
-    .video-wrap h2 { font-size: 1.15rem !important; letter-spacing: 1px; opacity: 0.9; margin-bottom: 2rem !important; }
-
-    /* Slim Buttons */
-    .video-wrap .btn, .masthead .btn {
-        font-size: 0.85rem !important; 
-        padding: 8px 16px !important; 
-        min-height: 42px !important;  
-        letter-spacing: 0.5px;
-        border-width: 1px !important; 
+    form .btn {
+        font-size: 1.1rem !important;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important
     }
-    .video-wrap .gap-3 { gap: 0.6rem !important; margin-bottom: 2rem !important; }
+
+    footer .col-md-6 {
+        margin-bottom: 2.5rem !important
+    }
+
+    footer h5 {
+        margin-bottom: 1.25rem !important
+    }
+
+    .footer-links li, footer .list-unstyled li {
+        margin-bottom: .85rem !important
+    }
+
+    footer {
+        padding-bottom: 4rem !important
+    }
+
+    .video-wrap h2 {
+        font-size: 1.15rem !important;
+        letter-spacing: 1px;
+        opacity: .9;
+        margin-bottom: 2rem !important
+    }
+
+    .masthead .btn, .video-wrap .btn {
+        font-size: .85rem !important;
+        padding: 8px 16px !important;
+        min-height: 42px !important;
+        letter-spacing: .5px;
+        border-width: 1px !important
+    }
+
+    .video-wrap .gap-3 {
+        gap: .6rem !important;
+        margin-bottom: 2rem !important
+    }
 }
 
-/* --- MOBILE LANDSCAPE (The "Squish" Protector) --- */
-@media (max-height: 600px) and (orientation: landscape) {
-    
-    /* 1. Release the hard height constraint so content doesn't crash into itself */
-    .home-page .masthead, 
-    .video-wrap,
-    .masthead { 
-        height: auto !important; /* Lets the box grow if the buttons need more room */
-        min-height: 100dvh !important; 
-        padding-top: 80px !important; 
-        padding-bottom: 40px !important; 
+@media (max-height:600px) and (orientation:landscape) {
+    .home-page .masthead, .masthead, .video-wrap {
+        height: auto !important;
+        min-height: 100dvh !important;
+        padding-top: 80px !important;
+        padding-bottom: 40px !important
     }
-    
-    html { scroll-padding-top: 60px !important; }
 
-    /* 2. Drastically scale down the typography */
-    .masthead h1, .video-wrap h1, .masthead .display-3 {
-        font-size: 1.5rem !important; 
+    html {
+        scroll-padding-top: 60px !important
+    }
+
+    .masthead .display-3, .masthead h1, .video-wrap h1 {
+        font-size: 1.5rem !important;
         margin-top: 0 !important;
-        margin-bottom: 10px !important;
+        margin-bottom: 10px !important
     }
 
-    /* 3. Hide non-essential visual elements (Lines and Subtitles take up too much vertical space) */
-    .masthead hr, .video-wrap hr, 
-    .masthead p.lead, .video-wrap p.lead { 
-        display: none !important; 
+    .masthead hr, .masthead p.lead, .video-wrap hr, .video-wrap p.lead {
+        display: none !important
     }
 
-    /* 4. Ultra-slim buttons and tighter gaps */
-    .masthead .btn, .video-wrap .btn, .home-page .btn-outline-light {
+    .home-page .btn-outline-light, .masthead .btn, .video-wrap .btn {
         padding: 4px 12px !important;
-        min-height: 36px !important; 
-        font-size: 0.75rem !important;
-        min-width: 120px !important; /* Shrinks the buttons so they fit side-by-side */
+        min-height: 36px !important;
+        font-size: .75rem !important;
+        min-width: 120px !important
     }
 
     .masthead .d-flex, .video-wrap .d-flex, .video-wrap .gap-3 {
-        gap: 10px !important; /* Tighter invisible wall between buttons */
-        margin-bottom: 0.5rem !important; 
+        gap: 10px !important;
+        margin-bottom: .5rem !important
     }
 
-    /* 5. Prevent 'The Stretch' on your text paragraphs in the lower sections */
-    p.lead, .singleCol p {
+    .singleCol p, p.lead {
         max-width: 600px;
         margin-left: auto;
-        margin-right: auto;
+        margin-right: auto
     }
 }
-/* =========================================
-   ACCESSIBILITY: RESPECT "REDUCE MOTION" SETTINGS
-   ========================================= */
-@media (prefers-reduced-motion: reduce) {
+
+@media (prefers-reduced-motion:reduce) {
     html {
-        scroll-behavior: auto !important; /* Turns off the glide for motion-sensitive users */
+        scroll-behavior: auto !important
     }
-    
-    /* Optional: You can also turn off AOS animations for these users */
+
     [data-aos] {
-        transition-duration: 0ms !important;
+        transition-duration: 0s !important;
         opacity: 1 !important;
-        transform: translate(0) !important;
+        transform: translate(0) !important
     }
 }
 
-/* --- TABLET ONLY (iPads) --- */
-@media (min-width: 768px) and (max-width: 1024px) {
-    h1 { font-size: 3.5rem !important; }
-    h2 { font-size: 2.5rem !important; }
-    .col-md-4 { width: 50% !important; }
-    .container { padding-left: 32px !important; padding-right: 32px !important; }
-    p { line-height: 1.7 !important; }
-    section { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+@media (min-width:768px) and (max-width:1024px) {
+    h1 {
+        font-size: 3.5rem !important
+    }
+
+    h2 {
+        font-size: 2.5rem !important
+    }
+
+    .col-md-4 {
+        width: 50% !important
+    }
+
+    .container {
+        padding-left: 32px !important;
+        padding-right: 32px !important
+    }
+
+    p {
+        line-height: 1.7 !important
+    }
+
+    section {
+        padding-top: 4.5rem !important;
+        padding-bottom: 4.5rem !important
+    }
 }
 
-/* --- 2K DESKTOP MONITORS --- */
-@media (min-width: 1440px) {
-    html { font-size: 18px !important; }
+@media (min-width:1440px) {
+    html {
+        font-size: 18px !important
+    }
 }
 
-/* --- 4K DESKTOP MONITORS --- */
-@media (min-width: 2560px) {
-    html { font-size: 22px !important; }
+@media (min-width:2560px) {
+    html {
+        font-size: 22px !important
+    }
 }
-/* Container for all logos */
-/* =========================================
-   10. LOGO STRIP (CLEAN & UNBREAKABLE)
-   ========================================= */
-/* 1. Keep the flexible strip, no forced box widths */
+
 .logo-strip {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 80px; 
+    gap: 80px
 }
 
 .logo-container {
-    height: 75px; 
-    display: flex; /* Fixed: Corrected display property */
-    flex: 0 0 200px; /* Ensures consistent layout width */
+    height: 75px;
+    display: flex;
+    flex: 0 0 200px;
     align-items: center;
-    justify-content: center;
+    justify-content: center
 }
 
-/* 2. Standardize image behavior */
 .logo-container img {
-    height: 100% !important; 
-    width: auto !important; 
-    
-    /* This 'max-width' prevents wide logos from becoming too big */
-    max-width: 180px; 
-    
+    height: 100% !important;
+    width: auto !important;
+    max-width: 180px;
     object-fit: contain !important;
-   filter: grayscale(100%) brightness(0.6) contrast(1.1);
-    transition: all 0.3s ease;
-    will-change: filter;
+    filter: grayscale(100%) brightness(.6) contrast(1.1);
+    transition: .3s;
+    will-change: filter
 }
 
 .logo-container img:hover {
-    filter: grayscale(0%) brightness(1) contrast(1);
+    filter: grayscale(0%) brightness(1) contrast(1)
 }
 
-/* Mobile: Force a clean 2x2 grid */
-@media (max-width: 768px) {
-    .logo-container { 
-        height: 60px; 
-        flex: 0 0 45%; /* Forces 2 columns on mobile */
+@media (max-width:768px) {
+    .logo-container {
+        height: 60px;
+        flex: 0 0 45%
     }
-    .logo-strip { 
-        gap: 20px; 
+
+    .logo-strip {
+        gap: 20px
     }
 }
 
-/* Use this class for the Sherwin-Williams logo to nudge it larger */
 .nudge-logo {
     transform: scale(1.15);
-    transform-origin: center;
+    transform-origin: center
 }
